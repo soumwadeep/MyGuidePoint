@@ -15,9 +15,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "@/img/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const pages = ["Our Story", "Contact"];
-const pageLinks = ["/about", "/contact"];
 const settings = ["Sign In", "Sign Up"];
 
 function Navbar() {
@@ -54,7 +54,6 @@ function Navbar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -63,7 +62,9 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            MY GUIDE POINT
+            <Link href="/" passHref className="link-white">
+              MY GUIDE POINT
+            </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -95,9 +96,14 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                <Link
+                  href={`/${page.toLowerCase().replace(" ", "-")}`}
+                  passHref
+                >
+                  <MenuItem component="a" onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -105,7 +111,6 @@ function Navbar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -115,7 +120,9 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            MY GUIDE POINT
+            <Link href="/" passHref className="link-white">
+              MY GUIDE POINT
+            </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -124,7 +131,13 @@ function Navbar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Link
+                  href={`/${page.toLowerCase().replace(" ", "-")}`}
+                  passHref
+                  className="link-white"
+                >
+                  {page}
+                </Link>
               </Button>
             ))}
           </Box>

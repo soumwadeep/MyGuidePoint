@@ -1,9 +1,11 @@
+import { Typography } from "@mui/material";
+
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome To My Guide Point</h1>
-    </div>
-  )
-}
+    <main>
+      <Typography variant="h2">Welcome To My Guide Point</Typography>
+    </main>
+  );
+};
 
-export default Home
+export default Home;
