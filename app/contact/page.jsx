@@ -3,7 +3,7 @@ import { Typography } from '@mui/material'
 const Contact = () => {
   return (
     <main>
-      <Typography variant='h2'>Contact</Typography>
+      <Typography variant="h3" fontWeight={600}>Contact</Typography>
     </main>
   )
 }

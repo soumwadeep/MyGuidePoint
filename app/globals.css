@@ -1,12 +1,22 @@
 body {
   text-align: center;
+  background: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(250, 250, 250) 0%,
+    rgb(225, 234, 238) 90%
+  );
+  background-attachment: fixed;
 }
 img {
   width: 100%;
   height: auto;
 }
 .logo {
-  max-width: 40px;
+  max-width: 35px;
+  background-color: red;
+  border-radius: 50%;
+  padding: 3px;
+  margin-right: 5px;
 }
 a {
   text-decoration: none;
@@ -16,6 +26,9 @@ a {
 @media only screen and (max-width: 992px) {
   .logo {
     display: none;
+  }
+  .moblogo {
+    display: block;
   }
 }
 .link-white {

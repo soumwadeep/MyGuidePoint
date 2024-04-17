@@ -1,13 +1,13 @@
 import { Typography } from "@mui/material";
 
-const Home = () => {
+const SignUp = () => {
   return (
     <main>
       <Typography variant="h3" fontWeight={600}>
-        Welcome To My Guide Point
+        Sign Up
       </Typography>
     </main>
   );
 };
 
-export default Home;
+export default SignUp;
