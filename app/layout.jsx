@@ -9,6 +9,7 @@ export const metadata = {
   title: "My Guide Point",
   description:
     "Your go-to destination for easy-to-understand, interactive guides on the latest tech and beyond.",
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({ children }) {
