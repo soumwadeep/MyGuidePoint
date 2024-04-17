@@ -95,10 +95,11 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {pages.map((page, index) => (
                 <Link
                   href={`/${page.toLowerCase().replace(" ", "-")}`}
                   passHref
+                  key={index}
                 >
                   <MenuItem
                     component="a"
@@ -168,11 +169,12 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              {settings.map((setting, index) => (
                 <Link
                   href={`/${setting.toLowerCase().replace(" ", "-")}`}
                   passHref
                   onClick={handleCloseUserMenu}
+                  key={index}
                 >
                   <MenuItem
                     component="a"
