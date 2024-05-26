@@ -6,10 +6,30 @@ body {
   );
   background-attachment: fixed;
 }
-
-
-
-
+img {
+  width: 100%;
+  height: auto;
+}
+.logo {
+  max-width: 50px;
+}
+.topbtn {
+  position: fixed;
+  width: fit-content;
+  right: 0;
+  bottom: 0;
+}
+/* .menubtn {
+  position: fixed;
+  right: 0;
+} */
+.cardimg {
+  max-width: 100px !important;
+  padding: 10px;
+}
+.menubtno {
+  max-width: 40px;
+}
 
 /* Centrally Alligning */
 .outer {

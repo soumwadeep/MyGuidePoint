@@ -31,8 +31,8 @@ const InstallApp = () => {
     }
   };
   return (
-    <button className="btn btn-success mt-3" onClick={handleInstall}>
-      Install Our App
+    <button className="btn btn-success m-1 shadow-lg" onClick={handleInstall}>
+      <i className="bi bi-cloud-download-fill"></i> Install Our App
     </button>
   );
 };
