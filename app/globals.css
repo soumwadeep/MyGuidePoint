@@ -6,3 +6,71 @@ body {
   );
   background-attachment: fixed;
 }
+
+
+
+
+
+/* Centrally Alligning */
+.outer {
+  display: table;
+  height: 100%;
+}
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+#animateimg,
+#animateimg2 {
+  animation: 2s ease-in-out infinite alternate-reverse both up-down;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.5s;
+}
+#animateimg:hover {
+  animation: 30s linear infinite animate;
+  cursor: pointer;
+}
+@keyframes animate {
+  0% {
+    transform: perspective(1000px) rotateY(0);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(-370deg);
+  }
+}
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+#animateimg2:hover {
+  animation: 30s linear infinite animate2;
+  cursor: pointer;
+}
+@keyframes animate2 {
+  0% {
+    transform: perspective(1000px) rotateY(0);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(370deg);
+  }
+}

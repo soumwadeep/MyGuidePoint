@@ -22,6 +22,10 @@ export const metadata = {
   manifest: "/manifest.webmanifest",
 };
 
+export const viewport = {
+  themeColor: "#F2F8F5",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
