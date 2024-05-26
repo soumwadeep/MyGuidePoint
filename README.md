@@ -1,7 +1,3 @@
-# MyGuidePoint
-
-Your go-to destination for easy-to-understand, interactive guides on the latest tech and beyond.
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

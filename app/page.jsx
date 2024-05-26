@@ -1,12 +1,11 @@
-import { Typography } from "@mui/material";
+import InstallApp from "@/components/InstallApp";
 
 const Home = () => {
   return (
-    <main>
-      <Typography variant="h3" fontWeight={600}>
-        Welcome To My Guide Point
-      </Typography>
-    </main>
+    <div>
+      <h1>Welcome</h1>
+      <InstallApp />
+    </div>
   );
 };
 
