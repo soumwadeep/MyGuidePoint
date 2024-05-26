@@ -95,6 +95,25 @@ export const getAllUsers = async () => {
   }
 };
 
+// Get All Posts
+export const getAllPosts = async () => {
+  try {
+    const q = query(collection(db, dbName, "Posts", "PostsData"));
+    const querySnapshot = await getDocs(q);
+    const users = [];
+    querySnapshot.forEach((doc) => {
+      users.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
+    return { data: users };
+  } catch (e) {
+    console.error("Error Getting All Posts", e);
+    return { error: e.message };
+  }
+};
+
 // Get All Teachers
 export const getAllTeachers = async () => {
   try {

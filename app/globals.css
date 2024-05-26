@@ -1,10 +1,13 @@
-body {
+body,.offcanvas {
   background: radial-gradient(
     circle at 10% 20%,
     rgba(216, 241, 230, 0.46) 0.1%,
     rgba(233, 226, 226, 0.28) 90.1%
   );
   background-attachment: fixed;
+}
+input,select,textarea{
+  background: transparent!important;
 }
 img {
   width: 100%;
@@ -23,10 +26,10 @@ img {
   position: fixed;
   right: 0;
 } */
-.cardimg {
+/* .cardimg {
   max-width: 100px !important;
   padding: 10px;
-}
+} */
 .menubtno {
   max-width: 40px;
 }

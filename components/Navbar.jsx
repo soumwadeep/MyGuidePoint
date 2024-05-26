@@ -25,7 +25,7 @@ const Navbar = () => {
         Menu
       </button>
       <div
-        className="offcanvas offcanvas-end"
+        className="offcanvas offcanvas-start"
         data-bs-scroll="true"
         tabIndex="-1"
         id="offcanvasWithBothOptions"
@@ -48,17 +48,17 @@ const Navbar = () => {
             aria-label="Close"
           ></button>
         </div>
-        <div className="offcanvas-body">
-          <Link href="/" className="nav-link">
+        <div className="offcanvas-body text-center lh-lg">
+          <Link href="/" className="nav-link fs-4">
             Home
           </Link>
-          <Link href="/" className="nav-link">
+          <Link href="/" className="nav-link fs-4">
             About
           </Link>
-          <Link href="/" className="nav-link">
+          <Link href="/" className="nav-link fs-4">
             Contact
           </Link>
-          <Link href="/" className="nav-link">
+          <Link href="/sign-in" className="nav-link fs-4">
             Sign In
           </Link>
         </div>
