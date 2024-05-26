@@ -1,13 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/img/logo.png";
+import AllBlockedLinks from "./AllBlockedLinks";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
   return (
     <main>
       {/* <Image src={logo} className="logo" alt="logo" placeholder="blur" /> */}
       <button
-        className="btn btn-info fw-bold menubtn mb-3"
+        className={`btn btn-info fw-bold menubtn mb-3 ${
+          AllBlockedLinks.some((item) => pathname.includes(item.link))
+            ? "d-none"
+            : ""
+        }`}
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasWithBothOptions"

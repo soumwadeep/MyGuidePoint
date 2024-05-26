@@ -5,6 +5,7 @@ import home2 from "@/img/home2.webp";
 import home3 from "@/img/home3.webp";
 import SignUpButton from "@/components/SignUpButton";
 import ReadButton from "@/components/ReadButton";
+import GoToTop from "@/components/GoToTop";
 
 const Home = () => {
   return (
@@ -115,6 +116,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <GoToTop/>
     </main>
   );
 };
