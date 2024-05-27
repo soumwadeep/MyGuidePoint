@@ -15,7 +15,10 @@ const Blogs = () => {
   const fetchPosts = async () => {
     const allPosts = await getAllPosts();
     if (allPosts.data) {
-      setPosts(allPosts.data);
+      const userPosts = allPosts.data.sort(
+        (a, b) => b.PostedAt.seconds - a.PostedAt.seconds
+      );
+      setPosts(userPosts);
     } else {
       console.log("Failed To Fetch All Posts");
     }
