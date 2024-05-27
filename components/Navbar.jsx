@@ -52,11 +52,11 @@ const Navbar = () => {
           <Link href="/" className="nav-link fs-4">
             Home
           </Link>
-          <Link href="/" className="nav-link fs-4">
-            About
+          <Link href="/blogs" className="nav-link fs-4">
+            Blogs
           </Link>
-          <Link href="/" className="nav-link fs-4">
-            Contact
+          <Link href="/sign-up" className="nav-link fs-4">
+           Sign Up
           </Link>
           <Link href="/sign-in" className="nav-link fs-4">
             Sign In

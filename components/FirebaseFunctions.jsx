@@ -329,7 +329,7 @@ export const logOutUser = async () => {
 // Get All Comments
 export const getAllComments = async () => {
   try {
-    const q = query(collection(db, dbName, "Comments", "CommentDatas"));
+    const q = query(collection(db, dbName, "Comments", "CommentsData"));
     const querySnapshot = await getDocs(q);
     const comments = [];
     querySnapshot.forEach((doc) => {
@@ -345,17 +345,16 @@ export const getAllComments = async () => {
   }
 };
 
-// Send Message
-export const sendMessage = async (name, mobileNo, email, subject, message) => {
+// Send Comment
+export const sendComment = async (name, email, message, postId) => {
   try {
     const docRef = await addDoc(
-      collection(db, dbName, "Comments", "CommentDatas"),
+      collection(db, dbName, "Comments", "CommentsData"),
       {
-        Name: name,
-        MobileNo: mobileNo,
-        SentBy: email,
-        Subject: subject,
+        Sender: name,
+        SenderEmail: email,
         Message: message,
+        PostId: postId,
         SentAt: serverTimestamp(),
       }
     );

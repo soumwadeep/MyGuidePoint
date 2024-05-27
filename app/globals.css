@@ -1,4 +1,5 @@
-body,.offcanvas {
+body,
+.offcanvas {
   background: radial-gradient(
     circle at 10% 20%,
     rgba(216, 241, 230, 0.46) 0.1%,
@@ -6,12 +7,18 @@ body,.offcanvas {
   );
   background-attachment: fixed;
 }
-input,select,textarea{
-  background: transparent!important;
+input,
+select,
+textarea {
+  background: transparent !important;
 }
 img {
   width: 100%;
   height: auto;
+}
+.comment-box {
+  max-height: 40vh;
+  overflow-y: scroll;
 }
 .logo {
   max-width: 50px;

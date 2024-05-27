@@ -1,5 +1,6 @@
 "use client";
 
+import Comments from "@/components/Comments";
 import { getPostById } from "@/components/FirebaseFunctions";
 import GoToTop from "@/components/GoToTop";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
@@ -44,6 +45,7 @@ const ViewBlog = () => {
           <p className="lh-lg">{postData.Description}</p>
         </div>
       )}
+      <Comments postId = {postId}/>
       <GoToTop goto={`/blogs/view?postId=${postId}`} />
     </main>
   );
