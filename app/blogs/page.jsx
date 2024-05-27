@@ -34,7 +34,11 @@ const Blogs = () => {
         <GlobalNoDataFound missingItem="Blogs" />
       ) : (
         posts.map((post) => (
-          <Link href="/" className="nav-link" key={post.id}>
+          <Link
+            href={`/blogs/view?postId=${post?.id}`}
+            className="nav-link"
+            key={post.id}
+          >
             <div className="card mb-3">
               <div className="row g-0">
                 <div className="col-md-3">
@@ -73,7 +77,7 @@ const Blogs = () => {
           </Link>
         ))
       )}
-      <GoToTop />
+      <GoToTop goto="/blogs" />
     </main>
   );
 };

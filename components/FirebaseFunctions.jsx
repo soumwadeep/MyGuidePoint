@@ -221,6 +221,7 @@ export const getClassAnnouncementById = async (aId) => {
 export const createPost = async (
   title,
   thumbnailImg,
+  featuredImg,
   description,
   userName,
   userEmail,
@@ -230,6 +231,7 @@ export const createPost = async (
     const docRef = await addDoc(collection(db, dbName, "Posts", "PostsData"), {
       Title: title,
       ThumbnailImg: thumbnailImg,
+      FeaturedImg: featuredImg,
       Description: description,
       PosterName: userName,
       PosterEmail: userEmail,
@@ -240,6 +242,23 @@ export const createPost = async (
     return { data: docRef.id };
   } catch (e) {
     console.log("Error Creating Class Announcements", e);
+    return { error: e.message };
+  }
+};
+
+// Get Post With Id
+export const getPostById = async (postId) => {
+  try {
+    const docRef = doc(db, dbName, "Posts", "PostsData", postId);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      // console.log("Document data:", docSnap.data());
+    } else {
+      console.log("No Such Document Found!");
+    }
+    return { data: docSnap.data() };
+  } catch (e) {
+    console.error("Error Getting Required Post", e);
     return { error: e.message };
   }
 };
@@ -298,8 +317,9 @@ export const getLoggedInUserData = () => {
 export const logOutUser = async () => {
   try {
     await signOut(auth);
-    localStorage.removeItem("Email");
-    localStorage.removeItem("UserType");
+    localStorage.removeItem("UserName");
+    localStorage.removeItem("UserEmail");
+    localStorage.removeItem("UserId");
     return { data: "Logout Successful" };
   } catch (error) {
     return { error: error.message };

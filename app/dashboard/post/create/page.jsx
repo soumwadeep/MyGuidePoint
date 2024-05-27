@@ -4,10 +4,13 @@ import { useEffect, useState } from "react";
 import { createPost, getAllPosts } from "@/components/FirebaseFunctions";
 
 import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
 
 const CreatePost = () => {
+  const router = useRouter();
   const [title, setTitle] = useState("");
   const [thumbnailImg, setThumbnailImg] = useState("");
+  const [featuredImg, setFeaturedImg] = useState("");
   const [description, setDescription] = useState("");
   const [isPosting, setIsPosting] = useState(false);
   const [posts, setPosts] = useState([]);
@@ -43,6 +46,7 @@ const CreatePost = () => {
       const response = await createPost(
         title,
         thumbnailImg,
+        featuredImg,
         description,
         userName,
         userEmail,
@@ -54,6 +58,7 @@ const CreatePost = () => {
           "Taking You Back...",
           "success"
         );
+        router.push("/dashboard");
       } else {
         Swal.fire(
           "We Were Unable To Upload Your Post!",
@@ -67,6 +72,7 @@ const CreatePost = () => {
       setIsPosting(false);
       setTitle("");
       setThumbnailImg("");
+      setFeaturedImg("");
       setDescription("");
     }
   };
@@ -105,6 +111,19 @@ const CreatePost = () => {
             placeholder="https://images.unsplash.com/photo-1599153066743-08810dc8a419?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXdzJTIwZWMyfGVufDB8fDB8fHwwm"
             value={thumbnailImg}
             onChange={(e) => setThumbnailImg(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="Featured Image Url" className="form-label">
+            Featured Image Url
+          </label>
+          <input
+            type="url"
+            className="form-control"
+            placeholder="https://images.unsplash.com/photo-1599153066743-08810dc8a419?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXdzJTIwZWMyfGVufDB8fDB8fHwwm"
+            value={featuredImg}
+            onChange={(e) => setFeaturedImg(e.target.value)}
             required
           />
         </div>

@@ -116,7 +116,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <GoToTop/>
+      <GoToTop goto="/" />
     </main>
   );
 };
