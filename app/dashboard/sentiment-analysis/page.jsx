@@ -24,7 +24,7 @@ const SentimentAnalysis = () => {
           .sort((a, b) => b.SentAt.seconds - a.SentAt.seconds);
 
         const negativeComments = userComments.filter((comment) => {
-          const result = sentiment.analyze(comment.Message);
+          const result = sentiment.analyze(comment.Message.toLowerCase());
           //   console.log(`Comment: ${comment.Message}, Sentiment Score: ${result.score}`);
           return result.score <= 3; // Identify negative sentiment
         });
@@ -62,7 +62,7 @@ const SentimentAnalysis = () => {
           ) : (
             <div className="row">
               {badComments.map((comment) => (
-                <div className="col-sm-4" key={comment.id}>
+                <div className="col-sm-4 mb-2" key={comment.id}>
                   <div className="card">
                     <div className="card-body">
                       <h5 className="card-title">{comment.Sender}</h5>
