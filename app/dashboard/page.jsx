@@ -28,14 +28,25 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
+    <div className="text-center">
       <h1>Welcome To Dashboard!</h1>
-      <Link href="dashboard/post/create" className="btn btn-info me-2">
+      <Link href="/dashboard/post/create" className="btn btn-info me-2">
         <i className="bi bi-box-arrow-right"></i> Create A Post
       </Link>
-      <button className="btn btn-danger" onClick={logOut}>
+      <button className="btn btn-danger me-2" onClick={logOut}>
         Log Out
       </button>
+      {/* <div className="row mt-3">
+        <div className="col-sm">
+          <h1>Your Posts</h1>
+        </div>
+        <div className="col-sm">
+          <h1>Recent Comments</h1>
+        </div>
+      </div> */}
+      <Link href="/dashboard/sentiment-analysis" className="btn  btn-info">
+        Go To Sentiment Analysis
+      </Link>
     </div>
   );
 };

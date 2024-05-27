@@ -17,6 +17,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-quill": "^2.0.0",
+    "sentiment": "^5.0.2",
+    "sentiment-badwords": "^1.0.9",
     "sweetalert2": "^11.11.0"
   }
 }

@@ -346,7 +346,13 @@ export const getAllComments = async () => {
 };
 
 // Send Comment
-export const sendComment = async (name, email, message, postId) => {
+export const sendComment = async (
+  name,
+  email,
+  message,
+  postId,
+  postAuthorId
+) => {
   try {
     const docRef = await addDoc(
       collection(db, dbName, "Comments", "CommentsData"),
@@ -355,6 +361,7 @@ export const sendComment = async (name, email, message, postId) => {
         SenderEmail: email,
         Message: message,
         PostId: postId,
+        PostAuthorId: postAuthorId,
         SentAt: serverTimestamp(),
       }
     );

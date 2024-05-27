@@ -13,6 +13,7 @@ const Comments = ({ postId }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+  const [postAuthorId, setPostAuthorId] = useState("");
 
   const fetchComments = async () => {
     try {
@@ -59,7 +60,13 @@ const Comments = ({ postId }) => {
         setCommenting(false);
         return;
       }
-      const response = await sendComment(name, email, message, postId);
+      const response = await sendComment(
+        name,
+        email,
+        message,
+        postId,
+        postAuthorId
+      );
       if (response.data) {
         Swal.fire(`Commented Successfully!`, `Taking You Back...`, "success");
         fetchComments();
@@ -82,6 +89,7 @@ const Comments = ({ postId }) => {
 
   useEffect(() => {
     fetchComments();
+    setPostAuthorId(localStorage.getItem("UserId"));
   }, [postId]);
 
   return (
